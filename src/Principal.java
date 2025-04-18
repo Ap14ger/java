@@ -1,4 +1,6 @@
 import com.aluracursos.screenmacth.calculos.CalculadoraDeTiempo;
+import com.aluracursos.screenmacth.calculos.FiltroRecomendacion;
+import com.aluracursos.screenmatch.modelos.Episodio;
 import com.aluracursos.screenmatch.modelos.Pelicula;
 import com.aluracursos.screenmatch.modelos.Serie;
 
@@ -39,7 +41,16 @@ public class Principal {
                 + calculadora.getTiempoTotal() + " minutos");
 
 
+        FiltroRecomendacion filtroRecomendacion = new FiltroRecomendacion();
+        filtroRecomendacion.filtra(miPelicula);
 
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("la casa Targeyen");
+        episodio.setSerie(casaDragon);
+        episodio.setTotalVisualizaciones(0);
+
+        filtroRecomendacion.filtra((episodio));
 
 
     }
